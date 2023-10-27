@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.6rem;
+	height: 100vh;
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: row;
+	height: 300px;
+	width: 700px;
+	background-color: #777;
+	box-shadow: 10px 5px 5px #000;
+	.link {
+		position: relative;
+		font-size: 2.5rem;
+		text-decoration: none;
+		color: #fff;
+	}
+	.link::before,
+	.link::after {
+		position: absolute;
+		content: "";
+		transition: transform 0.3s;
+	}
+	.one::before {
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		bottom: 0;
+		transform: scaleX(0);
+	}
+	.one:hover::before {
+		transform: scaleX(1);
+	}
+	.two::before {
+		width: 3px;
+		height: 100%;
+		left: -5px;
+		background-color: #fff;
+		transform: scaleY(0);
+	}
+	.two:hover::before {
+		transform: scaleY(1);
+	}
+	.two {
+		transition: color 0.3s;
+	}
+	.two:hover {
+		color: #444;
+	}
+	.three::before {
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		bottom: 0;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	.three::after {
+		width: 100%;
+		height: 3px;
+		left: 0;
+		transform: scaleX(0);
+		transform-origin: left;
+		background-color: #fff;
+	}
+	.three:hover::after {
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+	.three:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+	.four::before {
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	.four:hover::before {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+	.four::after {
+		content: "Link nr 4";
+		left: 0;
+		transition: color 0.3s;
+	}
+	.four:hover::after {
+		color: #000;
+	}
+	.five::before {
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		bottom: 0;
+		transform: scaleY(0);
+		transform-origin: bottom;
+	}
+	.five:hover::before {
+		transform: scaleY(1);
+	}
+	.five::after {
+		content: "Link nr 5";
+		left: 0;
+		transition: color 0.3s;
+	}
+	.five:hover::after {
+		color: #000;
+	}
+}
